@@ -1,0 +1,47 @@
+    header{
+        background-color: rgb(17, 1, 1);
+        color:rgb(74, 189, 255);
+        font-family: 'Luckiest Guy', cursive;
+        padding-top: 5px;
+        min-height: 70px;
+        border-bottom: 2px solid rgb(59, 58, 58);
+    }
+    header #logo h1 .highlight{
+        color: yellow;
+    }
+    header a{
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    header ul{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    header li{
+        float: left;
+        display: inline;
+        padding: 0 10px 0 10px;
+    }
+    header #logo{
+        float: left;
+        margin-left: 2%;
+    }
+
+    header #navtop{
+        float: right;
+        margin-top: 30px;
+    }
+
+    @media (max-width: 768px){
+    header #logo,
+    header #navtop,
+    header #navtop li{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+}
