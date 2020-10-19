@@ -1,10 +1,15 @@
-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
 section a {
     text-decoration: none;
+}
+.date-b {
+    padding: 10px;
+    font-family:'Luckiest Guy', cursive;
+    font-size: 1vw;
+    text-align:left;
+    background-color: rgb(253, 2, 86);
+    color: white;
+
 }
 #first-news {
     background-image: url(https://video-images.vice.com//articles/5f612881518e49009c097efe/lede/1600205561894-8122020gravediggersunioncvdouble-2.jpeg?crop=1xw:0.483xh;0xw,0xh&resize=1067:*);
@@ -92,41 +97,65 @@ section a {
     justify-content: space-between;
 }
 
-.box4,.box5,.box6{
+.box4,.box5,.box6,.box7,.box8,.box9{
     width: 30%;
     height: auto;
     flex-direction: column;
     font-size: 4vw;
+    border: 1px solid white;
 }
 
 .sidesbar a{
     color: blanchedalmond;
 }
 
-footer{
+.banner-1 {
+    padding: 10px;
+    font-family:'Luckiest Guy', cursive;
+    font-size: 4vw;
+    text-align: center;
+    background-color: magenta;
+    color: white;
+
+}
+
+.container-4{
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.boxes{
+    width: 45%;
+    padding: 10px;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.boxes img{
     width: 100%;
     height: auto;
-    margin-top: 5%;
-    background-color: black;
-    color: yellow;
-    font-size: 3vw;
-    font-family:'Luckiest Guy', cursive;
+    padding: 1px;
 }
 
-footer li{
-    float: left;
-    display: inline;
-    padding: 0 10px 0 10px;
+#third-news .box10,.box11,.box12,.box13{
+    border: 1px solid black;
 }
 
-footer a{
-    color: lightseagreen;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 3vw;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.box10,.box11,.box12,.box13{
+    width: 30%;
+    height: auto;
+}
+
+
+footer{
+    background-color: rgb(17, 1, 1);
+    color:rgb(74, 189, 255);
+    font-family: 'Luckiest Guy', cursive;
+    padding-top: 5px;
+    min-height: 70px;
+    border-bottom: 2px solid rgb(59, 58, 58);
 }
 
 footer p {
@@ -134,12 +163,20 @@ footer p {
     text-transform: uppercase;
 }
 
+footer .tags {
+    font-size: 2vw;
+    text-align: center;
+
+}
+
+footer .tags a {
+    text-decoration: none;
+    color: rgb(74, 189, 255);
+    margin-left: 3%;
+}
+
 @media (min-width: 480px) {
-    section{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+
     section a {
         text-decoration: none;
     }
@@ -206,7 +243,7 @@ footer p {
         flex-direction: column;
     }
 
-    #second-news .container-3 .sidesbar .box7, .box8{
+    #second-news .container-3 .sidesbar .box7, .box8, .box9{
         visibility: hidden;
         display:none;
     }
@@ -241,34 +278,30 @@ footer p {
     }
 
     footer{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        margin-top: 5%;
-        background-color: black;
-        color: yellow;
-        font-size: 3vw;
-        font-family:'Luckiest Guy', cursive;
+        background-color: rgb(17, 1, 1);
+        color:rgb(74, 189, 255);
+        font-family: 'Luckiest Guy', cursive;
+        padding-top: 5px;
+        min-height: 70px;
+        border-bottom: 2px solid rgb(59, 58, 58);
     }
-
-    footer li{
-        float: left;
-        display: inline;
-        padding: 0 10px 0 10px;
-    }
-
-    footer a{
-        color: lightseagreen;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 3vw;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
+    
+    
     footer p {
         text-align: center;
         text-transform: uppercase;
+    }
+
+    footer .tags {
+        font-size: 2vw;
+        text-align: center;
+    
+    }
+
+    footer .tags a {
+        text-decoration: none;
+        color: rgb(74, 189, 255);
+        margin-left: 3%;
     }
 
 }
@@ -371,11 +404,12 @@ footer p {
         color: white;
     }
 
-    .box4,.box5,.box6 ,.box7,.box8{
+    .box4,.box5,.box6 ,.box7,.box8,.box9{
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 80%;
         height: auto;
+        padding-bottom: 2.5%;
         font-size: 2vw;
     }
 
@@ -384,32 +418,29 @@ footer p {
     }
 
     footer{
-        display: flex;
-        flex-direction: column;
-        background-color: black;
-        color: yellow;
-        font-size: 1vw;
-        font-family:'Luckiest Guy', cursive;
+        background-color: rgb(17, 1, 1);
+        color:rgb(74, 189, 255);
+        font-family: 'Luckiest Guy', cursive;
+        padding-top: 5px;
+        min-height: 70px;
+        border-bottom: 2px solid rgb(59, 58, 58);
     }
-
-    footer li{
-        float: left;
-        display: inline;
-        text-align: center;
-        padding: 0 10px 0 10px;
-    }
-
-    footer a{
-        color: lightseagreen;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1vw;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
+    
     footer p {
         text-align: center;
         text-transform: uppercase;
+    }
+
+    footer .tags {
+        font-size: 2vw;
+        text-align: center;
+    
+    }
+
+    footer .tags a {
+        text-decoration: none;
+        color: rgb(74, 189, 255);
+        margin-left: 3%;
     }
 }
 @media (min-width: 900px) {
@@ -456,6 +487,7 @@ footer p {
 
     .box1,.box2,.box3{
         font-size: 2vw;
+        background-color: white;
     }
     .box1{
         display: flex;
@@ -511,7 +543,7 @@ footer p {
     .box4,.box5,.box6{
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 80%;
         height: auto;
         font-size: 2vw;
     }
@@ -521,32 +553,29 @@ footer p {
     }
 
     footer{
-        display: flex;
-        flex-direction: column;
-        background-color: black;
-        color: yellow;
-        font-size: 1vw;
-        font-family:'Luckiest Guy', cursive;
+        background-color: rgb(17, 1, 1);
+        color:rgb(74, 189, 255);
+        font-family: 'Luckiest Guy', cursive;
+        padding-top: 5px;
+        min-height: 70px;
+        border-bottom: 2px solid rgb(59, 58, 58);
     }
-
-    footer li{
-        float: left;
-        display: inline;
-        text-align: center;
-        padding: 0 10px 0 10px;
-    }
-
-    footer a{
-        color: lightseagreen;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1vw;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
+    
     footer p {
         text-align: center;
         text-transform: uppercase;
+    }
+
+    footer .tags {
+        font-size: 2vw;
+        text-align: center;
+    
+    }
+
+    footer .tags a {
+        text-decoration: none;
+        color: rgb(74, 189, 255);
+        margin-left: 3%;
     }
 }
 @media (min-width: 1024px) {
@@ -579,6 +608,11 @@ footer p {
     #second-news{
         display: flex;
         flex-direction: row;
+    }
+
+    #second-news .container-3 .sidesbar .box9{
+        visibility:visible;
+        display: inline;
     }
     #second-news .container-2 .responsive-2{
         width: 100%;
@@ -648,7 +682,7 @@ footer p {
     .box4,.box5,.box6{
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 80%;
         height: auto;
         font-size: 2vw;
     }
@@ -658,31 +692,29 @@ footer p {
     }
 
     footer{
-        display: flex;
-        flex-direction: column;
-        background-color: black;
-        color: yellow;
-        font-size: 1vw;
-        font-family:'Luckiest Guy', cursive;
+        background-color: rgb(17, 1, 1);
+        color:rgb(74, 189, 255);
+        font-family: 'Luckiest Guy', cursive;
+        padding-top: 5px;
+        min-height: 70px;
+        border-bottom: 2px solid rgb(59, 58, 58);
     }
-
-    footer li{
-        float: left;
-        display: inline;
-        padding: 0 10px 0 10px;
-    }
-
-    footer a{
-        color: lightseagreen;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1vw;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
+    
     footer p {
         text-align: center;
         text-transform: uppercase;
+    }
+
+    footer .tags {
+        font-size: 2vw;
+        text-align: center;
+    
+    }
+
+    footer .tags a {
+        text-decoration: none;
+        color: rgb(74, 189, 255);
+        margin-left: 3%;
     }
 
 }
@@ -795,31 +827,28 @@ footer p {
     }
 
     footer{
-        display: flex;
-        flex-direction: column;
-        background-color: black;
-        color: yellow;
-        font-size: 1vw;
-        font-family:'Luckiest Guy', cursive;
+        background-color: rgb(17, 1, 1);
+        color:rgb(74, 189, 255);
+        font-family: 'Luckiest Guy', cursive;
+        padding-top: 5px;
+        border-bottom: 2px solid rgb(59, 58, 58);
     }
-
-    footer li{
-        float: left;
-        display: inline;
-        padding: 0 10px 0 10px;
-    }
-
-    footer a{
-        color: lightseagreen;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1vw;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
+    
     footer p {
         text-align: center;
         text-transform: uppercase;
+    }
+
+    footer .tags {
+        font-size: 2vw;
+        text-align: center;
+    
+    }
+
+    footer .tags a {
+        text-decoration: none;
+        color: rgb(74, 189, 255);
+        margin-left: 3%;
     }
 
 }
