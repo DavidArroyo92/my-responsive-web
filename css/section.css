@@ -74,7 +74,7 @@ section a {
     flex-direction: column;
 }
 
-#second-news .container-3 .sidesbar .box7, .box8{
+#second-news .container-3 .sidesbar .box7, .box8, .box9{
     visibility: hidden;
     display:none;
 }
@@ -138,16 +138,15 @@ section a {
     height: auto;
     padding: 1px;
 }
-
-#third-news .box10,.box11,.box12,.box13{
-    border: 1px solid black;
-}
-
-.box10,.box11,.box12,.box13{
-    width: 30%;
+#adwords{
+    width: 100%;
     height: auto;
 }
 
+.ads1{
+    display: flex;
+    flex-direction:column;
+}
 
 footer{
     background-color: rgb(17, 1, 1);
@@ -384,6 +383,11 @@ footer .tags a {
         visibility:visible;
         display: inline;
     }
+
+    #second-news .container-3 .sidesbar .box9{
+        visibility:hidden;
+        display: none;
+    }
     .container-3{
         display: flex;
         flex-direction: column;
@@ -551,7 +555,12 @@ footer .tags a {
     .sidesbar a{
         color: blanchedalmond;
     }
-
+    .container-4{
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-between;
+        width: 100%;
+    }
     footer{
         background-color: rgb(17, 1, 1);
         color:rgb(74, 189, 255);
