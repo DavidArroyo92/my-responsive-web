@@ -2,15 +2,17 @@
 section a {
     text-decoration: none;
 }
+
 .date-b {
-    padding: 10px;
+    padding: .25%;
     font-family:'Luckiest Guy', cursive;
-    font-size: 1vw;
-    text-align:left;
+    font-size: 4vw;
+    text-align:center;
     background-color: rgb(253, 2, 86);
     color: white;
 
 }
+
 #first-news {
     background-image: url(https://video-images.vice.com//articles/5f612881518e49009c097efe/lede/1600205561894-8122020gravediggersunioncvdouble-2.jpeg?crop=1xw:0.483xh;0xw,0xh&resize=1067:*);
     background-repeat: no-repeat;
@@ -26,9 +28,9 @@ section a {
 }
 
 .container-1 h2 a{
-    font-size: 5vm;
+    font-size: 6vw;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-bottom: 10px;
     color: cornsilk;
     background-color: rgb(41, 35, 35, 0.75);
@@ -78,6 +80,7 @@ section a {
     visibility: hidden;
     display:none;
 }
+
 .sidesbar-title{
     background-color: black;
     color: rgb(74, 189, 255);
@@ -87,6 +90,7 @@ section a {
     text-align: center;
     font-size: 4vw;
 }
+
 .sidesbar{
     width: 100%;
     height: auto;
@@ -110,13 +114,12 @@ section a {
 }
 
 .banner-1 {
-    padding: 10px;
+    padding: .5;
     font-family:'Luckiest Guy', cursive;
     font-size: 4vw;
     text-align: center;
     background-color: magenta;
     color: white;
-
 }
 
 .container-4{
@@ -133,33 +136,92 @@ section a {
     align-self: flex-start;
 }
 
+.boxes a{
+    color: black;
+}
+
 .boxes img{
     width: 100%;
     height: auto;
     padding: 1px;
 }
-#adwords{
-    width: 100%;
+
+.ads1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ads1 img{
+    width: 70%;
+    height: auto;
+    display: flex;
+}
+
+.banner-2 {
+    padding: .5;
+    font-family:'Luckiest Guy', cursive;
+    font-size: 4vw;
+    text-align: center;
+    background-color: greenyellow;
+    color: black;
+}
+
+.banner-2 p{
+    margin-bottom: 0px;
+    
+}
+
+#podcast a{
+    color: aliceblue;
+}
+
+#podcast a:hover{
+    color:greenyellow;
+}
+
+.container-5{
+    display: flex;
+}
+
+#podcast .podcast-box .responsive-5{
+    width: 50%;
     height: auto;
 }
 
-.ads1{
+.podcast-box{
     display: flex;
-    flex-direction:column;
+    flex-wrap: wrap-reverse;
+}
+
+.responsive-5{
+    flex: 1;
+    order:2;
+}
+
+.title-responsive5{
+    flex: 1;
+    order:1;
+    background-color: black;
+    color: white;
+    font-size: 6vw;
+    font-family: fantasy;
+    text-align: center;
 }
 
 footer{
-    background-color: rgb(17, 1, 1);
-    color:rgb(74, 189, 255);
+    background-color: black;
     font-family: 'Luckiest Guy', cursive;
     padding-top: 5px;
     min-height: 70px;
+    margin-top: 10px;
     border-bottom: 2px solid rgb(59, 58, 58);
 }
 
 footer p {
     text-align: center;
     text-transform: uppercase;
+    color: yellow;
 }
 
 footer .tags {
@@ -175,160 +237,19 @@ footer .tags a {
 }
 
 @media (min-width: 480px) {
-
-    section a {
-        text-decoration: none;
-    }
     #first-news {
-        background-image: url(https://video-images.vice.com//articles/5f612881518e49009c097efe/lede/1600205561894-8122020gravediggersunioncvdouble-2.jpeg?crop=1xw:0.483xh;0xw,0xh&resize=1067:*);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
         height: 300px;
-    }
-
-    #first-news .container-1{
-        display: flex;
-        width: 100%;
-        height: auto;
-    }
-
-    .container-1 h2 a{
-        font-size: 5vm;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        margin-top: 100px;
-        margin-bottom: 10px;
-        color: cornsilk;
-        background-color: rgb(41, 35, 35, 0.75);
-    
-    }
-
-    #second-news .container-2 .responsive-2{
-        width: 30%;
-        height: auto;
-        
-    }
-
-    .box1,.box2,.box3{
-        display: flex;
-        font-size: 4vw;
-        border-bottom: 1px solid lightgray;
-        border-top: 1px solid lightgray;
-    }
-
-    .container-2 a{
-        color: black;
-    }
-
-    .responsive-2{
-        flex: 1;
-    }
-
-    .title-responsive{
-        flex: 2;
-    }
-
-    #second-news p {
-        margin-left: 4%;
-    }
-
-    #second-news .sidesbar .responsive-3{
-        width: 100%;
-        height: auto;
-    }
-
-    .container-3{
-        display: flex;
-        flex-direction: column;
     }
 
     #second-news .container-3 .sidesbar .box7, .box8, .box9{
         visibility: hidden;
         display:none;
     }
-    .sidesbar-title{
-        background-color: black;
-        color: rgb(74, 189, 255);
-        align-items: center;
-        font-family: 'Luckiest Guy', cursive;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 4vw;
-    }
-    .sidesbar{
-        width: 100%;
-        height: auto;
-        display: flex;
-        background-color: black;
-        padding: 5% 0 5% 0;
-        color: white;
-        justify-content: space-between;
-    }
-
-    .box4,.box5,.box6{
-        width: 30%;
-        height: auto;
-        flex-direction: column;
-        font-size: 4vw;
-    }
-
-    .sidesbar a{
-        color: blanchedalmond;
-    }
-
-    footer{
-        background-color: rgb(17, 1, 1);
-        color:rgb(74, 189, 255);
-        font-family: 'Luckiest Guy', cursive;
-        padding-top: 5px;
-        min-height: 70px;
-        border-bottom: 2px solid rgb(59, 58, 58);
-    }
-    
-    
-    footer p {
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    footer .tags {
-        font-size: 2vw;
-        text-align: center;
-    
-    }
-
-    footer .tags a {
-        text-decoration: none;
-        color: rgb(74, 189, 255);
-        margin-left: 3%;
-    }
 
 }
 @media (min-width: 768px) {
-    section a {
-        text-decoration: none;
-    }
     #first-news {
-        background-image: url(https://video-images.vice.com//articles/5f612881518e49009c097efe/lede/1600205561894-8122020gravediggersunioncvdouble-2.jpeg?crop=1xw:0.483xh;0xw,0xh&resize=1067:*);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
         height: 400px;
-    }
-
-    #first-news .container-1{
-        display: flex;
-        width: 100%;
-        height: auto;
-    }
-
-    .container-1 h2 a{
-        font-size: 5vm;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: cornsilk;
-        background-color: rgb(41, 35, 35, 0.75);
-        position: relative;
-        top: 49%;
     }
 
     #second-news{
@@ -336,20 +257,20 @@ footer .tags a {
         flex-direction: row;
         margin-top: 2.5%;
     }
+
     #second-news .container-2 .responsive-2{
         width: 100%;
         height: auto;
     }
+
     .container-2{
         flex: 2;
     }
+
     .container-3{
         flex: 1;
     }
 
-    .box1,.box2,.box3{
-        font-size: 2vw;
-    }
     .box1{
         flex: 1;
     }
@@ -357,13 +278,11 @@ footer .tags a {
     .box2{
         flex:1;    
     }
+
     .box3{
         flex: 1;
     }
-    .container-2 a{
-        color: black;
-    }
-
+    
     .box1,.box2,.box3{
         display: flex;
         flex-direction: column;
@@ -376,9 +295,6 @@ footer .tags a {
         flex: 1;
     }
 
-    #second-news p {
-        margin-left: 0%;
-    }
     #second-news .container-3 .sidesbar .box7, .box8{
         visibility:visible;
         display: inline;
@@ -388,24 +304,17 @@ footer .tags a {
         visibility:hidden;
         display: none;
     }
+
     .container-3{
         display: flex;
         flex-direction: column;
         margin-left: 2.5%;
     }
-    .sidesbar-title{
-        background-color: black;
-        color:rgb(74, 189, 255);
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 2vw;
-    }
+
     .sidesbar{
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: black;
-        color: white;
     }
 
     .box4,.box5,.box6 ,.box7,.box8,.box9{
@@ -417,447 +326,40 @@ footer .tags a {
         font-size: 2vw;
     }
 
-    .sidesbar a{
-        color: blanchedalmond;
-    }
-
-    footer{
-        background-color: rgb(17, 1, 1);
-        color:rgb(74, 189, 255);
-        font-family: 'Luckiest Guy', cursive;
-        padding-top: 5px;
-        min-height: 70px;
-        border-bottom: 2px solid rgb(59, 58, 58);
-    }
-    
-    footer p {
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    footer .tags {
-        font-size: 2vw;
-        text-align: center;
-    
-    }
-
-    footer .tags a {
-        text-decoration: none;
-        color: rgb(74, 189, 255);
-        margin-left: 3%;
-    }
 }
 @media (min-width: 900px) {
-    section a {
-        text-decoration: none;
-    }
+
     #first-news {
-        background-image: url(https://video-images.vice.com//articles/5f612881518e49009c097efe/lede/1600205561894-8122020gravediggersunioncvdouble-2.jpeg?crop=1xw:0.483xh;0xw,0xh&resize=1067:*);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
         height: 500px;
     }
 
-    #first-news .container-1{
-        display: flex;
-        width: 100%;
-        height: auto;
-    }
-
-    .container-1 h2 a{
-        font-size: 5vm;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: cornsilk;
-        background-color: rgb(41, 35, 35, 0.75);
-        position: relative;
-        top: 49%;
-    }
-
-    #second-news{
-        display: flex;
-        flex-direction: row;
-    }
-    #second-news .container-2 .responsive-2{
-        width: 100%;
-        height: auto;
-    }
-    .container-2{
-        flex: 2;
-    }
-    .container-3{
-        flex: 1;
-    }
-
-    .box1,.box2,.box3{
-        font-size: 2vw;
-        background-color: white;
-    }
-    .box1{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-
-    .box2{
-        display: flex;
-        flex-direction: column;
-        flex:1;    
-    }
-    .box3{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-    .container-2 a{
-        color: black;
-    }
-
-    .responsive-2{
-        flex: 1;
-    }
-
-    .title-responsive{
-        flex: 1;
-    }
-
-    #second-news p {
-        margin-left: 0%;
-    }
-
-    .container-3{
-        display: flex;
-        flex-direction: column;
-    }
-    .sidesbar-title{
-        background-color: black;
-        color: rgb(74, 189, 255);
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 2vw;
-    }
-    .sidesbar{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: black;
-        color: white;
-    }
-
-    .box4,.box5,.box6{
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        height: auto;
-        font-size: 2vw;
-    }
-
-    .sidesbar a{
-        color: blanchedalmond;
-    }
     .container-4{
         display: flex;
         flex-flow: nowrap;
         justify-content: space-between;
         width: 100%;
     }
-    footer{
-        background-color: rgb(17, 1, 1);
-        color:rgb(74, 189, 255);
-        font-family: 'Luckiest Guy', cursive;
-        padding-top: 5px;
-        min-height: 70px;
-        border-bottom: 2px solid rgb(59, 58, 58);
-    }
-    
-    footer p {
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    footer .tags {
-        font-size: 2vw;
-        text-align: center;
-    
-    }
-
-    footer .tags a {
-        text-decoration: none;
-        color: rgb(74, 189, 255);
-        margin-left: 3%;
-    }
 }
 @media (min-width: 1024px) {
-    section a {
-        text-decoration: none;
-    }
     #first-news {
-        background-image: url(https://video-images.vice.com//articles/5f612881518e49009c097efe/lede/1600205561894-8122020gravediggersunioncvdouble-2.jpeg?crop=1xw:0.483xh;0xw,0xh&resize=1067:*);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
         height: 600px;
     }
-
-    #first-news .container-1{
-        display: flex;
-        width: 100%;
-        height: auto;
-    }
-
-    .container-1 h2 a{
-        font-size: 5vm;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: cornsilk;
-        background-color: rgb(41, 35, 35, 0.75);
-        position: relative;
-        top: 49%;
-    }
-
-    #second-news{
-        display: flex;
-        flex-direction: row;
-    }
-
+    
     #second-news .container-3 .sidesbar .box9{
         visibility:visible;
         display: inline;
     }
-    #second-news .container-2 .responsive-2{
-        width: 100%;
-        height: auto;
-    }
-    .container-2{
-        flex: 3;
-    }
-    .container-3{
-        flex: 1;
-    }
-
-    .box1,.box2,.box3{
-        font-size: 2vw;
-    }
-    .box1{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-
-    .box2{
-        display: flex;
-        flex-direction: column;
-        flex:1;    
-    }
-    .box3{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-    .container-2 a{
-        color: black;
-    }
-
-    .responsive-2{
-        flex: 1;
-    }
-
-    .title-responsive{
-        flex: 1;
-    }
-
-    #second-news p {
-        margin-left: 0%;
-    }
-
-    .container-3{
-        display: flex;
-        flex-direction: column;
-    }
-    .sidesbar-title{
-        background-color: black;
-        color: rgb(74, 189, 255);
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 2vw;
-    }
-    .sidesbar{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: black;
-        color: white;
-    }
-
-    .box4,.box5,.box6{
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        height: auto;
-        font-size: 2vw;
-    }
-
-    .sidesbar a{
-        color: blanchedalmond;
-    }
-
-    footer{
-        background-color: rgb(17, 1, 1);
-        color:rgb(74, 189, 255);
-        font-family: 'Luckiest Guy', cursive;
-        padding-top: 5px;
-        min-height: 70px;
-        border-bottom: 2px solid rgb(59, 58, 58);
-    }
-    
-    footer p {
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    footer .tags {
-        font-size: 2vw;
-        text-align: center;
-    
-    }
-
-    footer .tags a {
-        text-decoration: none;
-        color: rgb(74, 189, 255);
-        margin-left: 3%;
-    }
-
 }
 @media (min-width: 1200px) {
-    section a {
-        text-decoration: none;
-    }
     #first-news {
-        background-image: url(https://video-images.vice.com//articles/5f612881518e49009c097efe/lede/1600205561894-8122020gravediggersunioncvdouble-2.jpeg?crop=1xw:0.483xh;0xw,0xh&resize=1067:*);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 600px;
+        height: 650px;
     }
 
-    #first-news .container-1{
-        display: flex;
-        width: 100%;
-        height: auto;
-    }
-
-    .container-1 h2 a{
-        font-size: 5vm;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: cornsilk;
-        background-color: rgb(41, 35, 35, 0.75);
-        position: relative;
-        top: 49%;
-    }
-
-    #second-news{
-        display: flex;
-        flex-direction: row;
-    }
-    #second-news .container-2 .responsive-2{
-        width: 100%;
-        height: auto;
-    }
     .container-2{
         flex: 3;
     }
-    .container-3{
-        flex: 1;
-    }
-
-    .box1,.box2,.box3{
-        font-size: 2vw;
-    }
-    .box1{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-
-    .box2{
-        display: flex;
-        flex-direction: column;
-        flex:1;    
-    }
-    .box3{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-    .container-2 a{
-        color: black;
-    }
-
-    .responsive-2{
-        flex: 1;
-    }
-
-    .title-responsive{
-        flex: 1;
-    }
-
-    #second-news p {
-        margin-left: 0%;
-    }
 
     .container-3{
-        display: flex;
-        flex-direction: column;
+        flex: 1;
     }
-    .sidesbar-title{
-        background-color: black;
-        color: rgb(74, 189, 255);
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 2vw;
-    }
-    .sidesbar{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: black;
-        color: white;
-    }
-
-    .box4,.box5,.box6{
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        height: auto;
-        font-size: 2vw;
-    }
-
-    .sidesbar a{
-        color: blanchedalmond;
-    }
-
-    footer{
-        background-color: rgb(17, 1, 1);
-        color:rgb(74, 189, 255);
-        font-family: 'Luckiest Guy', cursive;
-        padding-top: 5px;
-        border-bottom: 2px solid rgb(59, 58, 58);
-    }
-    
-    footer p {
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    footer .tags {
-        font-size: 2vw;
-        text-align: center;
-    
-    }
-
-    footer .tags a {
-        text-decoration: none;
-        color: rgb(74, 189, 255);
-        margin-left: 3%;
-    }
-
 }

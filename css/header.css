@@ -1,16 +1,17 @@
     header{
         background-color: rgb(17, 1, 1);
-        color:rgb(74, 189, 255);
         font-family: 'Luckiest Guy', cursive;
         padding-top: 5px;
         min-height: 70px;
         border-bottom: 2px solid rgb(59, 58, 58);
     }
+    
     header #logo h1 .highlight{
         color: yellow;
     }
+   
     header a{
-        color: white;
+        color:rgb(74, 189, 255);
         text-decoration: none;
         text-transform: uppercase;
         font-size: 20px;
@@ -23,7 +24,8 @@
 
     header li{
         float: left;
-        display: inline;
+        display: none;
+        visibility: hidden;
         padding: 0 10px 0 10px;
     }
     header #logo{
@@ -31,17 +33,27 @@
         margin-left: 2%;
     }
 
-    header #navtop{
+    header nav{
         float: right;
-        margin-top: 30px;
+        margin-top: 20px;
+        margin-right: 20px;
     }
 
-    @media (max-width: 768px){
-    header #logo,
-    header #navtop,
-    header #navtop li{
-        float: none;
-        text-align: center;
-        width: 100%;
+    .fas.fa-bars {
+        margin-bottom: 10px;
+        font-size: 30px;
+        color: rgb(74, 189, 255);
     }
+
+@media (min-width: 768px){
+    header li{
+        float: left;
+        display: inline;
+        visibility: visible;
+        padding: 0 10px 0 10px;
+    }
+    .fas.fa-bars{
+        display: none;
+    }
+
 }
