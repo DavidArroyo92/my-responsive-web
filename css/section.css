@@ -9,6 +9,7 @@ section a {
     font-size: 4vw;
     background-color: rgb(253, 2, 86);
     color: white;
+    text-align: center;
 
 }
 
@@ -42,7 +43,7 @@ section a {
     
 }
 
-.box1,.box2,.box3{
+.box1{
     display: flex;
     font-size: 4vw;
     border-bottom: 1px solid lightgray;
@@ -270,20 +271,12 @@ footer .tags a {
         flex: 1;
     }
 
-    .box1{
-        flex: 1;
-    }
-
-    .box2{
-        flex:1;    
-    }
-
-    .box3{
-        flex: 1;
-    }
-    
-    .box1,.box2,.box3{
+    .box1 {
         display: flex;
+        font-size: 4vw;
+        border-bottom: 1px solid lightgray;
+        border-top: 1px solid lightgray;
+        flex: 1;
         flex-direction: column;
     }
     .responsive-2{
