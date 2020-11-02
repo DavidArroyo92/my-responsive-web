@@ -1,133 +1,306 @@
 
-//Para q evitar que se ejecute la accion antes que se renderize el html
-
 window.onload = function(){
 
-      var titulo = document.getElementById("header-title");
-      titulo.style.background="navy";
-      titulo.style.color="#fff";
+  document.getElementById('form-g').reset();
 
-      
-    //Declarate VAR
+    // Function Reset
 
-    /*
-    var form = document.getElementByTagName("form")
-    var name = document.getElementById("name");
-    var mail = document.getElementById("mail");
-    var password = document.getElementById("password");
-    var age = document.getElementById("age");
-    var tel = document.getElementById("tel");
-    var adress = document.getElementById("adress");
-    var city = document.getElementById("city");
-    var code = document.getElementById("code");
-    var dni = document.getElementById("dni");
-    */
+    function reset(input, div_invalide){
+      document.getElementById(div_invalide).style.display = "none";
+      document.getElementById(input).classList.remove("form-input-invalid");
+    }
 
-    // Form 
-
-    var form = document.getElementsByTagName("form")[0];
+    // Regular expresions - i´m declare regular expresions because i want to asign them into a constants
+    const lettersEr = /[a-z]/i; 
+    const numbersEr =/\d/g;
+    const characterEr = /\W/;
 
     //validate Name
 
-    var validateName = function(e){
-      if (form.name.value === false){
-        alert("completar nombre");
-        e.preventDefault();
-      }
+    const name = document.getElementById("name");
+      name.addEventListener("focus",function  ( event ) {
+        event.target.style.background = "";    
+      }, true);
+      name.addEventListener("blur", function( event ) {
+        event.target.style.background = "pink"; 
+        validateName(event.target); 
+      }, true);
+    
+    function validateName(){
+      const name = document.getElementById("name").value;
+      const space = name.indexOf(" ");
+      const lettersAmount = name.length;
+      const invalidName = "Invalid name";
 
-    }
+        if (lettersAmount<7 || space === -1 ) { 
+          const nameInvalidInput = document.getElementById("name-wrong");
+          nameInvalidInput.innerHTML = invalidName;
+          nameInvalidInput.style.display = "block";
+          document.getElementById("name").classList.add("form-input-invalid");
+          return invalidName;
+        } else {
+          reset("name", "name-wrong");
+          console.log(validateName());
+          return true;
+        }
+      }
 
     //Validate email
 
-    var validateMail = function(){
-    var mail = document.getElementById("mail").value;
-    return /'@'/.test(mail.value);
-    }
+    const mail = document.getElementById("mail");
+      mail.addEventListener("focus", function( event ) {
+        event.target.style.background = "";    
+      }, true);
+      mail.addEventListener("blur", function( event ) {
+        event.target.style.background = "pink"; 
+        validateMail(event.target); 
+      }, true);
 
+    function validateMail(){
+      const mail= document.getElementById("mail").value;
+      const at = mail.indexOf("@");
+      const com = mail.indexOf(".com");
+      const invalidMail = "invalid e-mail";
+
+        if (at === -1 || com ===-1) {
+        const mailInvalidInput = document.getElementById("mail-wrong");
+        mailInvalidInput.innerHTML = invalidMail;
+        mailInvalidInput.style.display = "block";
+        document.getElementById("mail").classList.add("form-input-invalid");
+        return invalidMail;
+        } else {
+          reset("mail", "mail-wrong");
+          console.log(validateName());
+          return true;
+          }
+    }
+      
     //Validate Password
 
-    var validatePasword =function(e){
-      var password = document.getElementById("password").value;
-      if (password.length < 6) {
-        alert("la contraseña debe tener mas de seis letras");
-        e.preventDefault();
+    const password = document.getElementById("password");
+      password.addEventListener("focus", function( event ) {
+        event.target.style.background = "";    
+      }, true);
+      password.addEventListener("blur", function( event ) {
+        event.target.style.background = "pink"; 
+        validatePassword(event.target); 
+      }, true);
+
+    function validatePassword(){
+      const password = document.getElementById("password").value;
+      const lettersAmount = password.length;
+      const gotNumbers = numbersEr.test(password);
+      const gotCharacter = characterEr.test(password);
+      const invalidPassword = "invalid password";
+
+      if (lettersAmount < 8 || !gotNumbers || gotCharacter) {
+       const passwordInvalidInput = document.getElementById("password-wrong");
+       passwordInvalidInput.innerHTML = invalidPassword;
+       passwordInvalidInput.style.display = "block";
+       document.getElementById("mail").classList.add("form-input-invalid");
+       return invalidPassword;
+      }else{
+        reset("password", "password-wrong");
+        console.log(validatePassword())
+        return true;
       }
     }
 
     //Validate age
 
-    function validateAge(e) {
-        var age = document.getElementById("age").value;
-        if (age > 18) {
-          alert("eres menor de edad");
-          e.preventDefault();
-        }
-    }
-    //Validate TEL
+    const age = document.getElementById("age");
+      age.addEventListener("focus", function( event ) {
+        event.target.style.background = "";    
+      }, true);
+      age.addEventListener("blur", function( event ) {
+        event.target.style.background = "pink"; 
+        validateAge(event.target); 
+      }, true);
 
-    function validateTel(e) {
-      var tel = document.getElementById("tel").value;
-      if (isNaN(tel)){
-          alert("escribe un numero de telefono valido");
-          e.preventDefault();
+    function validateAge() {
+      const age = document.getElementById("age").value;
+      const invalidAge = "You are too young";
+      
+      if (age <18) {
+        const ageInvalidInput = document.getElementById("age-wrong");
+        ageInvalidInput.innerHTML = invalidAge;
+        ageInvalidInput.style.display = "block";
+        document.getElementById("age").classList.add("form-input-invalid");
+        return invalidAge;
+      } else {
+        reset("age", "age-wrong");
+        console.log(validateAge())
+          return true;
         }
+      }
+
+    //Validate TEL
+    const tel = document.getElementById("tel");
+    tel.addEventListener("focus", function( event ) {
+      event.target.style.background = "";    
+    }, true);
+    tel.addEventListener("blur", function( event ) {
+      event.target.style.background = "pink"; 
+      validateTel(event.target); 
+    }, true); 
+
+    function validateTel() {
+      const tel = document.getElementById("tel").value;
+      const numberAmount = tel.length;
+      const invalidTel = "Invalid Phone";
+
+      if (numberAmount <13){
+        const telInvalidInput = document.getElementById("tel-wrong");
+        telInvalidInput.innerHTML = invalidTel;
+        telInvalidInput.style.display = "block";
+        document.getElementById("tel").classList.add("form-input-invalid");
+        return invalidTel;
+      } else {
+        reset("tel", "tel-wrong");
+        console.log(validateTel())
+        return true;
+
+      }
     }
 
     //Validate Adress
-    function validateAdress(e){
-      var adress = document.getElementById("adress").value;
-      if (adress.length <5) {
-        alert("direccion incorrecta");
-        e.preventDefault();
+    const adress = document.getElementById("adress");
+    adress.addEventListener("focus", function( event ) {
+      event.target.style.background = "";    
+    }, true);
+    adress.addEventListener("blur", function( event ) {
+      event.target.style.background = "pink"; 
+      validateAdress(event.target); 
+    }, true); 
+
+    function validateAdress(){
+      const adress = document.getElementById("adress").value;
+      const lettersAmount = adress.length;
+      const gotLetter = lettersEr.test(adress);
+      const gotNumber = numbersEr.test(adress);
+      const space = adress.indexOf(" ");
+      const invalidAdress = "Invalid Addres";
+
+      if (lettersAmount < 5 || !gotLetter || !gotNumber || space === -1) {
+        const adressInvalidInput = document.getElementById("adress-wrong");
+        adressInvalidInput.innerHTML = invalidAdress;
+        adressInvalidInput.style.display = "block";
+        document.getElementById("adress").classList.add("form-input-invalid");
+        return invalidAdress;
+      } else {
+        reset("adress", "adress-wrong");
+        console.log(validateAdress())
+        return true;
       }
     }
 
     //Validate City
 
-    function validateCity(e){
-      var city = document.getElementById("city").value;
-      if (city.length <3) {
-        alert("Vuelve a escribir tu ciudad");
-        e.preventDefault();
+    const city = document.getElementById("city");
+    city.addEventListener("focus", function( event ) {
+      event.target.style.background = "";    
+    }, true);
+    city.addEventListener("blur", function( event ) {
+      event.target.style.background = "pink"; 
+      validateCity(event.target); 
+    }, true); 
+
+    function validateCity(){
+      const city = document.getElementById("city").value;
+      const letterAmount = city.length;
+      const invalidCity = "Invalid City";
+
+      if (letterAmount <3) {
+        const cityInvalidInput = document.getElementById("city-wrong");
+        cityInvalidInput.innerHTML = invalidCity;
+        cityInvalidInput.style.display = "block";
+        document.getElementById("city").classList.add("form-input-invalid");
+        return invalidCity;
+      } else {
+        reset("city", "city-wrong");
+        console.log(validateCity())
+        return true;
       }
-
-
-    //Validate Code
-
-    function validateCode (e){
-      var code = document.getElementById("code").value;
-      if ((code.length <3) && isNaN(code))  {
-        alert("el codigo postal tiene que ser un numero de mas de 3 digitos");
-        e.preventDefault();
-      }
-
-    //Validate DNI
-
-    function validateDni (e){
-      var dni = document.getElementById("dni").value;
-      if ((code.length <=8) && isNaN(code))  {
-        alert("el codigo postal tiene que ser un numero de mas de 3 digitos");
-        e.preventDefault();
-      }
-
-    //Validate Form
-
-    var validateAll= function(e){
-                validateName(e);
-                validateEmail(e);
-                validatePasword(e);
-                validateAge(e);
-                validateTel(e);
-                validateAdress(e);
-                validateCity(e);
-                validateCode(e);
-                validateDni(e);
     }
 
+    //Validate ZIP-Code
   
-    /*
-    form.addEventListener.('submit', validateAll)}
-    }
-    */
-}
+    const zcode = document.getElementById("zip-code");
+    zcode.addEventListener("focus", function( event ) {
+      event.target.style.background = "";    
+    }, true);
+    zcode.addEventListener("blur", function( event ) {
+      event.target.style.background = "pink"; 
+      validateCode(event.target); 
+    }, true); 
 
+    function validateCode(){
+      const zcode = document.getElementById("zip-code").value;
+      const numberAmount = zcode.length;
+      const invalidZcode = "Invalid Zip-code";
+      
+      if (numberAmount<3) {
+        zcodeInvalidInput = document.getElementById("zcode-wrong");
+        zcodeInvalidInput.innerHTML = invalidZcode;
+        zcodeInvalidInput.style.display = "block";
+        document.getElementById("zip-code").classList.add("form-input-invalid");
+        return invalidZcode;
+      } else {
+        reset("zip-code", "zcode-wrong");
+        console.log(validateCode())
+        return true
+      }
+    }
+    //Validate DNI
+    const dni = document.getElementById("dni");
+    dni.addEventListener("focus", function( event ) {
+      event.target.style.background = "";    
+    }, true);
+    dni.addEventListener("blur", function( event ) {
+      event.target.style.background = "pink"; 
+      validateDni(event.target); 
+    }, true); 
+
+    function validateDni (){
+      const dni = document.getElementById("dni").value;
+      const numberAmount = dni.length;
+      const invalidDni = "Invalid ID";
+      
+      if (numberAmount <7) {
+        dniInvalidInput = document.getElementById("dni-wrong");
+        dniInvalidInput.innerHTML = invalidDni;
+        dniInvalidInput.style.display = "block";
+        document.getElementById("dni").classList.add("form-input-invalid");
+        return invalidDni;
+      } else {
+        reset("dni", "dni-wrong");
+        console.log(validateDni())
+        return true
+      }
+    }
+    
+    //Validation form
+
+    
+    function validateForm() {
+
+      const alertName = validateName();
+      const alertEmail = validateMail();
+      const alertPassword = validatePassword();
+      const alertAge = validateAge();
+      const alertTel = validatePhone();
+      const alertAddress = validateAddress();
+      const alertCity = validateCity();
+      const alertZcode = validateCode();
+      const alertDni = validateDni();
+
+      if ( alertName !==  true || alertEmail !== true ||alertPassword !==  true 
+        || alertAge !== true ||alertTel !==  true || alertAddress !== true ||
+        alertCity !==  true || alertZcode !== true || alertDni !==true) {
+          alert ("You must make changes")
+        return true
+      } else {
+        alert ("¡You are subscribe now!")
+      }
+    }
+}
