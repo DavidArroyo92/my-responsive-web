@@ -12,6 +12,10 @@ h2 {
     color: yellow;
     background-color: black;
 }
+
+h3 {
+    text-align: center;
+}
 main{
     display: flex;
     justify-content: center;
@@ -57,6 +61,9 @@ form .button:hover{
 }
 .form-input-invalid{
   border: 2px solid #dc3545;
+}
+.form-input-valid{
+    border: 2px solid#008CBA;
 }
 .error-item {
     display: none;
