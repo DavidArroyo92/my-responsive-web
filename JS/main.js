@@ -1,8 +1,6 @@
 
 window.onload = function(){
 
-  document.getElementById('form-g').reset();
-
     // Function Reset
 
     function reset(input, div_invalide){
@@ -14,6 +12,8 @@ window.onload = function(){
     const lettersEr = /[a-z]/i; 
     const numbersEr =/\d/g;
     const characterEr = /\W/;
+    const numberandletters = /\w/;
+
 
     //validate Name
 
@@ -89,19 +89,47 @@ window.onload = function(){
     function validatePassword(){
       const password = document.getElementById("password").value;
       const lettersAmount = password.length;
-      const gotNumbers = numbersEr.test(password);
-      const gotCharacter = characterEr.test(password);
+      const gotNumbersandletter = numberandletters.test(password);
       const invalidPassword = "invalid password";
 
-      if (lettersAmount < 8 || !gotNumbers || gotCharacter) {
+      if (lettersAmount < 8 || !gotNumbersandletter) {
        const passwordInvalidInput = document.getElementById("password-wrong");
        passwordInvalidInput.innerHTML = invalidPassword;
        passwordInvalidInput.style.display = "block";
-       document.getElementById("mail").classList.add("form-input-invalid");
+       document.getElementById("password").classList.add("form-input-invalid");
        return invalidPassword;
       }else{
         reset("password", "password-wrong");
         console.log(validatePassword())
+        return true;
+      }
+    }
+
+    //Validate Repeat Password
+    
+    const repPassword = document.getElementById("repeat-password");
+    repPassword.addEventListener("focus", function( event ) {
+      event.target.style.background = "";    
+    }, true);
+    repPassword.addEventListener("blur", function( event ) {
+      event.target.style.background = "pink"; 
+      validatePassword(event.target); 
+    }, true);
+
+    function validateRepeatpassword(){
+      const repPassword = document.getElementById("repeat-password").value;
+      const password = document.getElementById("password").value;
+      const invalidPasswordrepeat = "the passwords are not same";
+
+      if (repPassword !== password) {
+       const reppasswordInvalidInput = document.getElementById("repeat-wrong");
+       reppasswordInvalidInput.innerHTML = invalidPasswordrepeat;
+       reppasswordInvalidInput.style.display = "block";
+       document.getElementById("repeat-password").classList.add("form-input-invalid");
+       return invalidPasswordrepeat;
+      }else{
+        reset("repeat-password", "repeat-wrong");
+        console.log(validateRepeatpassword())
         return true;
       }
     }
@@ -121,7 +149,7 @@ window.onload = function(){
       const age = document.getElementById("age").value;
       const invalidAge = "You are too young";
       
-      if (age <18) {
+      if (age < 18) {
         const ageInvalidInput = document.getElementById("age-wrong");
         ageInvalidInput.innerHTML = invalidAge;
         ageInvalidInput.style.display = "block";
@@ -148,8 +176,12 @@ window.onload = function(){
       const tel = document.getElementById("tel").value;
       const numberAmount = tel.length;
       const invalidTel = "Invalid Phone";
+      const space = tel.indexOf(" ");
+      const underscore = tel.indexOf("_");
+      const parenthesis =tel.indexOf("()")
 
-      if (numberAmount <13){
+
+      if (numberAmount <7 || space !== -1|| underscore !== -1 || parenthesis !== -1){
         const telInvalidInput = document.getElementById("tel-wrong");
         telInvalidInput.innerHTML = invalidTel;
         telInvalidInput.style.display = "block";
@@ -176,12 +208,10 @@ window.onload = function(){
     function validateAdress(){
       const adress = document.getElementById("adress").value;
       const lettersAmount = adress.length;
-      const gotLetter = lettersEr.test(adress);
-      const gotNumber = numbersEr.test(adress);
       const space = adress.indexOf(" ");
       const invalidAdress = "Invalid Addres";
 
-      if (lettersAmount < 5 || !gotLetter || !gotNumber || space === -1) {
+      if (lettersAmount < 5 || space ===-1) {
         const adressInvalidInput = document.getElementById("adress-wrong");
         adressInvalidInput.innerHTML = invalidAdress;
         adressInvalidInput.style.display = "block";
@@ -239,7 +269,7 @@ window.onload = function(){
       const numberAmount = zcode.length;
       const invalidZcode = "Invalid Zip-code";
       
-      if (numberAmount<3) {
+      if (numberAmount <= 3) {
         zcodeInvalidInput = document.getElementById("zcode-wrong");
         zcodeInvalidInput.innerHTML = invalidZcode;
         zcodeInvalidInput.style.display = "block";
@@ -283,10 +313,11 @@ window.onload = function(){
 
     
     function validateForm() {
-
+    
       const alertName = validateName();
       const alertEmail = validateMail();
       const alertPassword = validatePassword();
+      const alertRepeat = validateRepeatpassword();
       const alertAge = validateAge();
       const alertTel = validatePhone();
       const alertAddress = validateAddress();
@@ -294,7 +325,7 @@ window.onload = function(){
       const alertZcode = validateCode();
       const alertDni = validateDni();
 
-      if ( alertName !==  true || alertEmail !== true ||alertPassword !==  true 
+      if ( alertName !==  true || alertEmail !== true ||alertPassword !==  true ||alertRepeat !== true
         || alertAge !== true ||alertTel !==  true || alertAddress !== true ||
         alertCity !==  true || alertZcode !== true || alertDni !==true) {
           alert ("You must make changes")
@@ -302,5 +333,7 @@ window.onload = function(){
       } else {
         alert ("¡You are subscribe now!")
       }
+      const button= document.getElementsByClassName("button");
+      button.addEventListener ("onclick", function (event) {validateForm}, true);
     }
 }
