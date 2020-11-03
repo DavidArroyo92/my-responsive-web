@@ -333,8 +333,5 @@ window.onload = function(){
       } else {
         alert ("¡You are subscribe now!")
       }
-      
-    });
-     
 }
 }
