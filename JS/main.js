@@ -3,8 +3,8 @@ window.onload = function(){
 
     // Function Reset
 
-    function reset(input, div_invalide){
-      document.getElementById(div_invalide).style.display = "none";
+    function reset(input, removeError){
+      document.getElementById(removeError).style.display = "none";
       document.getElementById(input).classList.remove("form-input-invalid");
     }
 
@@ -22,7 +22,6 @@ window.onload = function(){
         event.target.style.background = "";    
       }, true);
       name.addEventListener("blur", function( event ) {
-        event.target.style.background = "pink"; 
         validateName(event.target); 
       }, true);
     
@@ -40,6 +39,7 @@ window.onload = function(){
           return invalidName;
         } else {
           reset("name", "name-wrong");
+          document.getElementById("name").classList.add("form-input-valid");
           console.log(validateName());
           return true;
         }
@@ -52,7 +52,6 @@ window.onload = function(){
         event.target.style.background = "";    
       }, true);
       mail.addEventListener("blur", function( event ) {
-        event.target.style.background = "pink"; 
         validateMail(event.target); 
       }, true);
 
@@ -70,6 +69,7 @@ window.onload = function(){
         return invalidMail;
         } else {
           reset("mail", "mail-wrong");
+          document.getElementById("mail").classList.add("form-input-valid");
           console.log(validateName());
           return true;
           }
@@ -82,7 +82,6 @@ window.onload = function(){
         event.target.style.background = "";    
       }, true);
       password.addEventListener("blur", function( event ) {
-        event.target.style.background = "pink"; 
         validatePassword(event.target); 
       }, true);
 
@@ -100,6 +99,7 @@ window.onload = function(){
        return invalidPassword;
       }else{
         reset("password", "password-wrong");
+        document.getElementById("password").classList.add("form-input-valid");
         console.log(validatePassword())
         return true;
       }
@@ -112,7 +112,6 @@ window.onload = function(){
       event.target.style.background = "";    
     }, true);
     repPassword.addEventListener("blur", function( event ) {
-      event.target.style.background = "pink"; 
       validatePassword(event.target); 
     }, true);
 
@@ -129,6 +128,7 @@ window.onload = function(){
        return invalidPasswordrepeat;
       }else{
         reset("repeat-password", "repeat-wrong");
+        document.getElementById("repeat-password").classList.add("form-input-valid");
         console.log(validateRepeatpassword())
         return true;
       }
@@ -141,7 +141,6 @@ window.onload = function(){
         event.target.style.background = "";    
       }, true);
       age.addEventListener("blur", function( event ) {
-        event.target.style.background = "pink"; 
         validateAge(event.target); 
       }, true);
 
@@ -157,6 +156,7 @@ window.onload = function(){
         return invalidAge;
       } else {
         reset("age", "age-wrong");
+        document.getElementById("age").classList.add("form-input-valid");
         console.log(validateAge())
           return true;
         }
@@ -168,7 +168,6 @@ window.onload = function(){
       event.target.style.background = "";    
     }, true);
     tel.addEventListener("blur", function( event ) {
-      event.target.style.background = "pink"; 
       validateTel(event.target); 
     }, true); 
 
@@ -189,6 +188,7 @@ window.onload = function(){
         return invalidTel;
       } else {
         reset("tel", "tel-wrong");
+        document.getElementById("tel").classList.add("form-input-valid");
         console.log(validateTel())
         return true;
 
@@ -201,7 +201,6 @@ window.onload = function(){
       event.target.style.background = "";    
     }, true);
     adress.addEventListener("blur", function( event ) {
-      event.target.style.background = "pink"; 
       validateAdress(event.target); 
     }, true); 
 
@@ -219,6 +218,7 @@ window.onload = function(){
         return invalidAdress;
       } else {
         reset("adress", "adress-wrong");
+        document.getElementById("adress").classList.add("form-input-valid");
         console.log(validateAdress())
         return true;
       }
@@ -231,7 +231,6 @@ window.onload = function(){
       event.target.style.background = "";    
     }, true);
     city.addEventListener("blur", function( event ) {
-      event.target.style.background = "pink"; 
       validateCity(event.target); 
     }, true); 
 
@@ -248,6 +247,7 @@ window.onload = function(){
         return invalidCity;
       } else {
         reset("city", "city-wrong");
+        document.getElementById("city").classList.add("form-input-valid");
         console.log(validateCity())
         return true;
       }
@@ -260,7 +260,6 @@ window.onload = function(){
       event.target.style.background = "";    
     }, true);
     zcode.addEventListener("blur", function( event ) {
-      event.target.style.background = "pink"; 
       validateCode(event.target); 
     }, true); 
 
@@ -277,6 +276,7 @@ window.onload = function(){
         return invalidZcode;
       } else {
         reset("zip-code", "zcode-wrong");
+        document.getElementById("zip-code").classList.add("form-input-valid");
         console.log(validateCode())
         return true
       }
@@ -287,7 +287,6 @@ window.onload = function(){
       event.target.style.background = "";    
     }, true);
     dni.addEventListener("blur", function( event ) {
-      event.target.style.background = "pink"; 
       validateDni(event.target); 
     }, true); 
 
@@ -303,7 +302,8 @@ window.onload = function(){
         document.getElementById("dni").classList.add("form-input-invalid");
         return invalidDni;
       } else {
-        reset("dni", "dni-wrong");
+        reset("dni", "dni-wrong", "form-imput-invalid");
+        document.getElementById("dni").classList.add("form-input-valid");
         console.log(validateDni())
         return true
       }
@@ -333,7 +333,11 @@ window.onload = function(){
       } else {
         alert ("¡You are subscribe now!")
       }
+      
       const button= document.getElementsByClassName("button");
-      button.addEventListener ("onclick", function (event) {validateForm}, true);
-    }
+      button.addEventListener ("click",  function submite() {
+        alert('THANKS FOR SUBSCRIBE!');
+    });
+     
+}
 }
