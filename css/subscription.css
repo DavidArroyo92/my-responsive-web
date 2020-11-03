@@ -1,14 +1,21 @@
-
-h1{
-    text-align: center;
-    font-family: 'Luckiest Guy', cursive;
-    background-color: black;
-    color: yellow;
+body a:hover{
+    color: yellowgreen;
 }
 
+header{
+    display: flow-root;
+}
+
+h2 {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    color: yellow;
+    background-color: black;
+}
 main{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 form{
     display: flex;
@@ -32,16 +39,21 @@ form .button{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
     margin: 18px 2px;
     cursor: pointer;
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 10px 74px 10px 74px;
 }
-.form-imput {
+form .button:hover{
+    color: rgb(74, 189, 255);;
+    background-color: black;
+    font-family:'Luckiest Guy', cursive;
+}
+.form-input {
     width: 90%;
     color:blue;
     background-color: #fff;
+    border-radius: 5px;
 }
 .form-input-invalid{
   border: 2px solid #dc3545;
@@ -79,4 +91,17 @@ footer .tags a {
     text-decoration: none;
     color: rgb(74, 189, 255);
     margin-left: 3%;
+    }
+
+    @media (min-width: 768px){
+        header li{
+            float: left;
+            display: inline;
+            visibility: visible;
+            padding: 0 10px 0 10px;
+        }
+        .fas.fa-bars{
+            display: none;
+        }
+    
     }
