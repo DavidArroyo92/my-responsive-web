@@ -34,12 +34,13 @@
         </nav>
     </header>
     <main class="container">
-            <h2>
-                Subscription
-            </h2>
             <div class="welcome">
-                <span class="welcome-subs">
-                </span>
+                <h2>
+                    Subscription
+                </h2>
+                <p id="welcome">
+                    Hello 
+                </p>
             </div>
             <form id="form-g" method="POST">
                 <div class="row">
@@ -62,7 +63,7 @@
                     </fieldset>
                     <fieldset>
                         <input type="password" id="repeat-password" class="form-input" placeholder="password-repeat">
-                        <span id=repeat-wrong class="error-items">
+                        <span id=repeat-wrong class="error-item">
                         </span>
                     </fieldset>
                 </div>
@@ -80,7 +81,7 @@
                 </div>
                 <div class="row">
                     <fieldset>
-                        <input type="text" id="adress" class="form-input" placeholder="Adress">
+                        <input type="adress" id="adress" class="form-input" placeholder="Adress">
                         <span id=adress-wrong class=error-item>
                         </span>
                     </fieldset>
@@ -103,7 +104,7 @@
                     </fieldset>
                 </div>
                 <div class="row">
-                        <input type="submit" class= button value="subscribe">
+                        <input type="submit" id = submit class= button value="subscribe"> 
                 </div>
             </form>
     </main>
