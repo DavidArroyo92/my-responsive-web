@@ -18,7 +18,7 @@ window.onload = function(){
 
     const nameInput = document.getElementById("name");
       nameInput.addEventListener("focus",function  ( event ) {
-        event.target.style.background = "";    
+        document.getElementById('name').classList.remove("form-input-invalid");
       }, true);
       nameInput.addEventListener("blur", function( event ) {
         validateName(); 
@@ -40,7 +40,6 @@ window.onload = function(){
         } else {
           reset("name", "name-wrong");
           document.getElementById("name").classList.add("form-input-valid");
-          console.log(validateName());
           return true;
         }
       }
@@ -77,11 +76,11 @@ window.onload = function(){
       
     //Validate Password
 
-    const password = document.getElementById("password");
-      password.addEventListener("focus", function( event ) {
+    const passwordInput = document.getElementById("password");
+      passwordInput.addEventListener("focus", function( event ) {
         event.target.style.background = "";    
       }, true);
-      password.addEventListener("blur", function( event ) {
+      passwordInput.addEventListener("blur", function( event ) {
         validatePassword(); 
       }, true);
 
@@ -89,10 +88,12 @@ window.onload = function(){
       const password = document.getElementById("password").value;
       const lettersAmount = password.length;
       const gotNumbersandletter = numbersEr.test(password);
+      const gotCharacters = characterEr.test(password);
       const invalidPassword = "At least 8 characters, consisting of letters and numbers.";
 
-      if (lettersAmount < 8 || !gotNumbersandletter) {
+      if (lettersAmount < 8 || !gotNumbersandletter || gotCharacters) {
        const passwordInvalidInput = document.getElementById("password-wrong");
+       passwordInput.style.background = "pink"; 
        passwordInvalidInput.innerHTML = invalidPassword;
        passwordInvalidInput.style.display = "block";
        document.getElementById("password").classList.add("form-input-invalid");
@@ -106,12 +107,12 @@ window.onload = function(){
 
     //Validate Repeat Password
     
-    const repPassword = document.getElementById("repeat-password");
-    repPassword.addEventListener("focus", function( event ) {
+    const repPasswordInput = document.getElementById("repeat-password");
+    repPasswordInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
     }, true);
-    repPassword.addEventListener("blur", function( event ) {
-      validatePassword(); 
+    repPasswordInput.addEventListener("blur", function( event ) {
+      validateRepeatpassword(); 
     }, true);
 
     function validateRepeatpassword(){
@@ -121,6 +122,7 @@ window.onload = function(){
 
       if (repPassword !== password) {
        const reppasswordInvalidInput = document.getElementById("repeat-wrong");
+       repPasswordInput.style.background = "pink"; 
        reppasswordInvalidInput.innerHTML = invalidPasswordrepeat;
        reppasswordInvalidInput.style.display = "block";
        document.getElementById("repeat-password").classList.add("form-input-invalid");
@@ -134,20 +136,21 @@ window.onload = function(){
 
     //Validate age
 
-    const age = document.getElementById("age");
-      age.addEventListener("focus", function( event ) {
+    const ageInput = document.getElementById("age");
+      ageInput.addEventListener("focus", function( event ) {
         event.target.style.background = "";    
       }, true);
-      age.addEventListener("blur", function( event ) {
+      ageInput.addEventListener("blur", function( event ) {
         validateAge(); 
       }, true);
 
     function validateAge() {
       const age = document.getElementById("age").value;
-      const invalidAge = "You are too young";
+      const invalidAge = "You must be 18 years of age or older";
       
       if (age < 18) {
         const ageInvalidInput = document.getElementById("age-wrong");
+        ageInput.style.background = "pink"; 
         ageInvalidInput.innerHTML = invalidAge;
         ageInvalidInput.style.display = "block";
         document.getElementById("age").classList.add("form-input-invalid");
@@ -160,11 +163,11 @@ window.onload = function(){
       }
 
     //Validate TEL
-    const tel = document.getElementById("tel");
-    tel.addEventListener("focus", function( event ) {
+    const telInput= document.getElementById("tel");
+    telInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
     }, true);
-    tel.addEventListener("blur", function( event ) {
+    telInput.addEventListener("blur", function( event ) {
       validateTel(); 
     }, true); 
 
@@ -177,6 +180,7 @@ window.onload = function(){
 
       if (numberAmount <7 || space !==-1|| !character.test(tel)){
         const telInvalidInput = document.getElementById("tel-wrong");
+        telInput.style.background = "pink"; 
         telInvalidInput.innerHTML = invalidTel;
         telInvalidInput.style.display = "block";
         document.getElementById("tel").classList.add("form-input-invalid");
@@ -190,11 +194,11 @@ window.onload = function(){
     }
 
     //Validate Adress
-    const adress = document.getElementById("adress");
-    adress.addEventListener("focus", function( event ) {
+    const adressInput = document.getElementById("adress");
+    adressInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
     }, true);
-    adress.addEventListener("blur", function( event ) {
+    adressInput.addEventListener("blur", function( event ) {
       validateAdress(); 
     }, true); 
 
@@ -207,6 +211,7 @@ window.onload = function(){
 
       if (lettersAmount < 5 || space ===-1 || !character.test(adress)) {
         const adressInvalidInput = document.getElementById("adress-wrong");
+        adressInput.style.background = "pink"; 
         adressInvalidInput.innerHTML = invalidAdress;
         adressInvalidInput.style.display = "block";
         document.getElementById("adress").classList.add("form-input-invalid");
@@ -220,11 +225,11 @@ window.onload = function(){
 
     //Validate City
 
-    const city = document.getElementById("city");
-    city.addEventListener("focus", function( event ) {
+    const cityInput = document.getElementById("city");
+    cityInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
     }, true);
-    city.addEventListener("blur", function( event ) {
+    cityInput.addEventListener("blur", function( event ) {
       validateCity(); 
     }, true); 
 
@@ -235,6 +240,7 @@ window.onload = function(){
 
       if (letterAmount <3) {
         const cityInvalidInput = document.getElementById("city-wrong");
+        cityInput.style.background = "pink"; 
         cityInvalidInput.innerHTML = invalidCity;
         cityInvalidInput.style.display = "block";
         document.getElementById("city").classList.add("form-input-invalid");
@@ -248,11 +254,11 @@ window.onload = function(){
 
     //Validate ZIP-Code
   
-    const zcode = document.getElementById("zip-code");
-    zcode.addEventListener("focus", function( event ) {
+    const zcodeInput = document.getElementById("zip-code");
+    zcodeInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
     }, true);
-    zcode.addEventListener("blur", function( event ) {
+    zcodeInput.addEventListener("blur", function( event ) {
       validateCode(); 
     }, true); 
 
@@ -262,7 +268,8 @@ window.onload = function(){
       const invalidZcode = "At least 3 characters.";
       
       if (numberAmount <= 3) {
-        zcodeInvalidInput = document.getElementById("zcode-wrong");
+        const zcodeInvalidInput = document.getElementById("zcode-wrong");
+        zcodeInput.style.background = "pink";
         zcodeInvalidInput.innerHTML = invalidZcode;
         zcodeInvalidInput.style.display = "block";
         document.getElementById("zip-code").classList.add("form-input-invalid");
@@ -274,11 +281,11 @@ window.onload = function(){
       }
     }
     //Validate DNI
-    const dni = document.getElementById("dni");
-    dni.addEventListener("focus", function( event ) {
+    const dniInput = document.getElementById("dni");
+    dniInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
     }, true);
-    dni.addEventListener("blur", function( event ) {
+    dniInput.addEventListener("blur", function( event ) {
       validateDni(); 
     }, true); 
 
@@ -288,7 +295,8 @@ window.onload = function(){
       const invalidDni = "7 or 8 digit number.";
       
       if (numberAmount <7) {
-        dniInvalidInput = document.getElementById("dni-wrong");
+        const dniInvalidInput = document.getElementById("dni-wrong");
+        dniInput.style.background = "pink";
         dniInvalidInput.innerHTML = invalidDni;
         dniInvalidInput.style.display = "block";
         document.getElementById("dni").classList.add("form-input-invalid");
@@ -300,29 +308,43 @@ window.onload = function(){
       }
     }
    
-    //Validation form
-    
-    document.getElementById("submit").addEventListener('submit', function validateForm(){
+    //Welcome
 
-      const errorFields ='';
-      const correctFields = '';
+    const nameSuscriptor = document.getElementById("name");
+    nameSuscriptor.addEventListener("keyup", nameHello);
+
+    function nameHello() {
+      const welcome = document.getElementById("welcome");
+      const nameSuscriptor = document.getElementById("name").value;
+      if (nameSuscriptor) {
+        welcome.innerHTML = "Hello, " + nameSuscriptor + "!";
+      } else {
+        welcome.innerHTML = "Hello";
+      }
+    }
+
+    //Validation form
+    const validate = document.getElementById("submit");
+    validate.addEventListener('click', function validateForm(){
+
+      let errorFields ='';
+      let correctFields = '';
 
       //NAME
 
-      isNameValid = validateName();
+      const isNameValid = validateName();
       if (isNameValid) {
-        correctFields = correctFields + 'Your name is: '+ document.getElementById("name").value + '\n'
+        correctFields = correctFields + 'Your name is: ' + document.getElementById("name").value + '\n';
+      } else {
+        errorFields = errorFields + 'Full name field has errors. \n';
       }
-      else {
-          errorFields = errorFields + 'Full name field has errors. \n';
-      }
-        alert (correctFields + errorFields);
-
+      alert(correctFields + errorFields);
+  
       //EMAIL
 
       isEmailValid = validateMail();
       if (isEmailValid) {
-        correctFields = correctFields + 'Your E-mail is: '+ document.getElementById("mail").value + '\n'
+        correctFields = correctFields + 'Your E-mail is: '+ document.getElementById("mail").value + '\n';
       } 
       else {
         errorFields = errorFields + 'Your E-mail has error. \n';
@@ -333,7 +355,7 @@ window.onload = function(){
 
       isPasswordValid = validatePassword();
       if (isPasswordValid) {
-        correctFields = correctFields + 'Your password is: '+ document.getElementById("password").value + '\n'
+        correctFields = correctFields + 'Your password is: '+ document.getElementById("password").value + '\n';
       } 
       else {
         errorFields = errorFields + 'the password must have at least 8 characters with letters and numbers. \n';
@@ -344,7 +366,7 @@ window.onload = function(){
 
       isRepeatPasswordValid = validateRepeatpassword();
       if (isRepeatPasswordValid) {
-        correctFields = correctFields + 'Your password is: '+ document.getElementById("repeat-password").value + '\n'
+        correctFields = correctFields + 'Your password is: '+ document.getElementById("repeat-password").value + '\n';
       } 
       else {
         errorFields = errorFields + 'Your password is not the same. \n';
@@ -355,7 +377,7 @@ window.onload = function(){
 
       isAgeValid = validateAge();
       if (isAgeValid) {
-        correctFields = correctFields + 'Your age is: '+ document.getElementById("age").value + '\n'
+        correctFields = correctFields + 'Your age is: '+ document.getElementById("age").value + '\n';
       } 
       else {
         errorFields = errorFields + 'You must be 18 years of age or older. \n';
@@ -364,9 +386,9 @@ window.onload = function(){
 
       //PHONE
 
-      isPhoneValid = validatePhone();
+      isPhoneValid = validateTel();
       if (isPhoneValid) {
-        correctFields = correctFields + 'Your phone number is: '+ document.getElementById("tel").value + '\n'
+        correctFields = correctFields + 'Your phone number is: '+ document.getElementById("tel").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The phone must have 7 digits or more, no dots or dashes \n';
@@ -388,7 +410,7 @@ window.onload = function(){
 
       isCityValid = validateCity();
       if (isCityValid) {
-        correctFields = correctFields + 'Your City is: '+ document.getElementById("city").value + '\n'
+        correctFields = correctFields + 'Your City is: '+ document.getElementById("city").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The city must have at least 3 characters \n';
@@ -398,7 +420,7 @@ window.onload = function(){
       //ZIP-CODE
       isZcodeValid = validateCode();
       if (isZcodeValid) {
-        correctFields = correctFields + 'Your zip code is: '+ document.getElementById("zip-code").value + '\n'
+        correctFields = correctFields + 'Your zip code is: '+ document.getElementById("zip-code").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The zip must have at least 3 characters \n';
@@ -408,7 +430,7 @@ window.onload = function(){
     //DNI
     isDniValid = validateDni();
       if (isDniValid) {
-        correctFields = correctFields + 'Your DNI is: '+ document.getElementById("dni").value + '\n'
+        correctFields = correctFields + 'Your DNI is: '+ document.getElementById("dni").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The dni must have 7 or 8 digits \n';
@@ -417,10 +439,11 @@ window.onload = function(){
     
     //SUBMIT
 
-    if (!correctFields) {
-      alert(correctFields);
+    if (correctFields !== "") {
+      alert(messageFormvalid);
     } else {
-      alert(errorFields);
+      alert(messageFormInvalid);
     }
+  
     }
 )}
