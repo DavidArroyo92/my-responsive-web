@@ -17,8 +17,10 @@ window.onload = function(){
     //validate Name
 
     const nameInput = document.getElementById("name");
-      nameInput.addEventListener("focus",function  ( event ) {
-        document.getElementById('name').classList.remove("form-input-invalid");
+    const nameInvalidInput = document.getElementById("name-wrong");
+    nameInput.addEventListener("focus",function  ( event ) {
+      event.target.style.background = ""; 
+      nameInvalidInput.style.display = "none";
       }, true);
       nameInput.addEventListener("blur", function( event ) {
         validateName(); 
@@ -39,7 +41,6 @@ window.onload = function(){
           return false;
         } else {
           reset("name", "name-wrong");
-          document.getElementById("name").classList.add("form-input-valid");
           return true;
         }
       }
@@ -47,8 +48,10 @@ window.onload = function(){
     //Validate email
 
     const mailInput = document.getElementById("mail");
+    const mailInvalidInput = document.getElementById("mail-wrong");
       mailInput.addEventListener("focus", function( event ) {
         event.target.style.background = "";    
+        mailInvalidInput.style.display = "none";
       }, true);
       mailInput.addEventListener("blur", function( event ) {
         validateMail(); 
@@ -69,7 +72,6 @@ window.onload = function(){
         return false;
         } else {
           reset("mail", "mail-wrong");
-          document.getElementById("mail").classList.add("form-input-valid");
           return true;
           }
     }
@@ -77,8 +79,10 @@ window.onload = function(){
     //Validate Password
 
     const passwordInput = document.getElementById("password");
+    const passwordInvalidInput = document.getElementById("password-wrong");
       passwordInput.addEventListener("focus", function( event ) {
-        event.target.style.background = "";    
+        event.target.style.background = ""; 
+        passwordInvalidInput.style.display = "none";
       }, true);
       passwordInput.addEventListener("blur", function( event ) {
         validatePassword(); 
@@ -100,7 +104,6 @@ window.onload = function(){
        return false;
       }else{
         reset("password", "password-wrong");
-        document.getElementById("password").classList.add("form-input-valid");
         return true;
       }
     }
@@ -108,8 +111,10 @@ window.onload = function(){
     //Validate Repeat Password
     
     const repPasswordInput = document.getElementById("repeat-password");
+    const reppasswordInvalidInput = document.getElementById("repeat-wrong");
     repPasswordInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
+      reppasswordInvalidInput.style.display = "none";
     }, true);
     repPasswordInput.addEventListener("blur", function( event ) {
       validateRepeatpassword(); 
@@ -129,7 +134,6 @@ window.onload = function(){
        return false;
       }else{
         reset("repeat-password", "repeat-wrong");
-        document.getElementById("repeat-password").classList.add("form-input-valid");
         return true;
       }
     }
@@ -137,8 +141,10 @@ window.onload = function(){
     //Validate age
 
     const ageInput = document.getElementById("age");
+    const ageInvalidInput = document.getElementById("age-wrong");
       ageInput.addEventListener("focus", function( event ) {
         event.target.style.background = "";    
+        ageInvalidInput.style.display = "none";
       }, true);
       ageInput.addEventListener("blur", function( event ) {
         validateAge(); 
@@ -157,15 +163,16 @@ window.onload = function(){
         return false;
       } else {
         reset("age", "age-wrong");
-        document.getElementById("age").classList.add("form-input-valid");
           return true;
         }
       }
 
     //Validate TEL
     const telInput= document.getElementById("tel");
+    const telInvalidInput = document.getElementById("tel-wrong");
     telInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
+      telInvalidInput.style.display = "none";
     }, true);
     telInput.addEventListener("blur", function( event ) {
       validateTel(); 
@@ -187,7 +194,6 @@ window.onload = function(){
         return false;
       } else {
         reset("tel", "tel-wrong");
-        document.getElementById("tel").classList.add("form-input-valid");
         return true;
 
       }
@@ -195,8 +201,10 @@ window.onload = function(){
 
     //Validate Adress
     const adressInput = document.getElementById("adress");
+    const adressInvalidInput = document.getElementById("adress-wrong");
     adressInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
+      adressInvalidInput.style.display = "none";
     }, true);
     adressInput.addEventListener("blur", function( event ) {
       validateAdress(); 
@@ -206,10 +214,10 @@ window.onload = function(){
       const adress = document.getElementById("adress").value;
       const lettersAmount = adress.length;
       const space = adress.indexOf(" ");
-      const character = new RegExp('^[a-zA-Z0-9\\s]+$');
+      const gotNumber = numbersEr.test(adress);
       const invalidAdress = "At least 5 characters, with letters, numbers and a space";
 
-      if (lettersAmount < 5 || space ===-1 || !character.test(adress)) {
+      if (lettersAmount < 5 || space ===-1 || !gotNumber) {
         const adressInvalidInput = document.getElementById("adress-wrong");
         adressInput.style.background = "pink"; 
         adressInvalidInput.innerHTML = invalidAdress;
@@ -218,7 +226,6 @@ window.onload = function(){
         return false;
       } else {
         reset("adress", "adress-wrong");
-        document.getElementById("adress").classList.add("form-input-valid");
         return true;
       }
     }
@@ -226,8 +233,10 @@ window.onload = function(){
     //Validate City
 
     const cityInput = document.getElementById("city");
+    const cityInvalidInput = document.getElementById("city-wrong");
     cityInput.addEventListener("focus", function( event ) {
-      event.target.style.background = "";    
+      event.target.style.background = "";  
+      cityInvalidInput.style.display = "none";  
     }, true);
     cityInput.addEventListener("blur", function( event ) {
       validateCity(); 
@@ -247,7 +256,6 @@ window.onload = function(){
         return false;
       } else {
         reset("city", "city-wrong");
-        document.getElementById("city").classList.add("form-input-valid");
         return true;
       }
     }
@@ -255,8 +263,10 @@ window.onload = function(){
     //Validate ZIP-Code
   
     const zcodeInput = document.getElementById("zip-code");
+    const zcodeInvalidInput = document.getElementById("zcode-wrong");
     zcodeInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
+      zcodeInvalidInput.style.display = "none";
     }, true);
     zcodeInput.addEventListener("blur", function( event ) {
       validateCode(); 
@@ -276,14 +286,15 @@ window.onload = function(){
         return false;
       } else {
         reset("zip-code", "zcode-wrong");
-        document.getElementById("zip-code").classList.add("form-input-valid");
         return true
       }
     }
     //Validate DNI
     const dniInput = document.getElementById("dni");
+    const dniInvalidInput = document.getElementById("dni-wrong");
     dniInput.addEventListener("focus", function( event ) {
       event.target.style.background = "";    
+      dniInvalidInput.style.display = "none";
     }, true);
     dniInput.addEventListener("blur", function( event ) {
       validateDni(); 
@@ -294,7 +305,7 @@ window.onload = function(){
       const numberAmount = dni.length;
       const invalidDni = "7 or 8 digit number.";
       
-      if (numberAmount <7) {
+      if (numberAmount <7 || numberAmount <8) {
         const dniInvalidInput = document.getElementById("dni-wrong");
         dniInput.style.background = "pink";
         dniInvalidInput.innerHTML = invalidDni;
@@ -302,8 +313,7 @@ window.onload = function(){
         document.getElementById("dni").classList.add("form-input-invalid");
         return false;
       } else {
-        reset("dni", "dni-wrong", "form-imput-invalid");
-        document.getElementById("dni").classList.add("form-input-valid");
+        reset("dni", "dni-wrong");
         return true
       }
     }
@@ -338,112 +348,104 @@ window.onload = function(){
       } else {
         errorFields = errorFields + 'Full name field has errors. \n';
       }
-      alert(correctFields + errorFields);
   
       //EMAIL
 
-      isEmailValid = validateMail();
+      const isEmailValid = validateMail();
       if (isEmailValid) {
         correctFields = correctFields + 'Your E-mail is: '+ document.getElementById("mail").value + '\n';
       } 
       else {
         errorFields = errorFields + 'Your E-mail has error. \n';
       }
-      alert (correctFields + errorFields);
 
       //PASSWORD
 
-      isPasswordValid = validatePassword();
+      const isPasswordValid = validatePassword();
       if (isPasswordValid) {
         correctFields = correctFields + 'Your password is: '+ document.getElementById("password").value + '\n';
       } 
       else {
         errorFields = errorFields + 'the password must have at least 8 characters with letters and numbers. \n';
       }
-      alert (correctFields + errorFields);
 
       //PASSWORD REPEAT
 
-      isRepeatPasswordValid = validateRepeatpassword();
+      const isRepeatPasswordValid = validateRepeatpassword();
       if (isRepeatPasswordValid) {
         correctFields = correctFields + 'Your password is: '+ document.getElementById("repeat-password").value + '\n';
       } 
       else {
         errorFields = errorFields + 'Your password is not the same. \n';
       }
-      alert (correctFields + errorFields);
 
       //AGE
 
-      isAgeValid = validateAge();
+      const isAgeValid = validateAge();
       if (isAgeValid) {
         correctFields = correctFields + 'Your age is: '+ document.getElementById("age").value + '\n';
       } 
       else {
         errorFields = errorFields + 'You must be 18 years of age or older. \n';
       }
-      alert (correctFields + errorFields);
 
       //PHONE
 
-      isPhoneValid = validateTel();
+      const isPhoneValid = validateTel();
       if (isPhoneValid) {
         correctFields = correctFields + 'Your phone number is: '+ document.getElementById("tel").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The phone must have 7 digits or more, no dots or dashes \n';
       }
-      alert (correctFields + errorFields);
       
       //ADRESS
 
-      isAdressValid = validateAdress();
+      const isAdressValid = validateAdress();
       if (isAdressValid) {
         correctFields = correctFields + 'Your adress is: '+ document.getElementById("adress").value + '\n'
       } 
       else {
         errorFields = errorFields + 'The address must have at least 5 characters with letters and numbers and space in the middle \n';
       }
-      alert (correctFields + errorFields);
 
       //CITY
 
-      isCityValid = validateCity();
+      const isCityValid = validateCity();
       if (isCityValid) {
         correctFields = correctFields + 'Your City is: '+ document.getElementById("city").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The city must have at least 3 characters \n';
       }
-      alert (correctFields + errorFields);
 
       //ZIP-CODE
-      isZcodeValid = validateCode();
+      const isZcodeValid = validateCode();
       if (isZcodeValid) {
         correctFields = correctFields + 'Your zip code is: '+ document.getElementById("zip-code").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The zip must have at least 3 characters \n';
       }
-      alert (correctFields + errorFields);
     
     //DNI
-    isDniValid = validateDni();
+    const isDniValid = validateDni();
       if (isDniValid) {
         correctFields = correctFields + 'Your DNI is: '+ document.getElementById("dni").value + '\n';
       } 
       else {
         errorFields = errorFields + 'The dni must have 7 or 8 digits \n';
       }
-      alert (correctFields + errorFields);
+    
     
     //SUBMIT
 
-    if (correctFields !== "") {
-      alert(messageFormvalid);
+    alert(correctFields + errorFields);
+
+    if (errorFields == '' ) {
+      alert("you are subscribe now")
     } else {
-      alert(messageFormInvalid);
+      alert("You are not subscribe, please complete all the items");
     }
-  
-    }
+  }
 )}
