@@ -35,7 +35,7 @@ form{
 fieldset{
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 45%;
 }
 form .button{
     background-color: #008CBA;
